@@ -8,10 +8,27 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        L2();
+    }
 
-        ArrayList<Lion> lionsCollection = LionsFactory.createLions(10);
-//        LionCage cage = LionCage(lionsCollection );
+    public static void L2(){
+        ArrayList<Lion> lionsCollection = LionsFactory.createLions(25);
+        for(Lion lion: lionsCollection){
+            System.out.println(lion.toString());
         }
+        LionCage cage = new LionCage();
+        cage.setLions(lionsCollection);
+        cage.giveFood(1200);
+        cage.setGarbageWeight(150);
+        System.out.println(cage);
+        System.out.println();
+
+        cage.cleanCage(50);
+        for(Lion lion: lionsCollection){
+            System.out.println(lion.toString());
+        }
+        System.out.println(cage);
+    }
 
 
 }

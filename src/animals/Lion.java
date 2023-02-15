@@ -2,7 +2,7 @@ package animals;
 
 public class Lion extends Animal {
 
-    protected static final int MAX_WEIGHT = 80;
+    protected static final int MAX_WEIGHT = 120;
     protected static final String type = "lion";
 
     private int maneVolume;
@@ -22,6 +22,16 @@ public class Lion extends Animal {
 
     public String getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return "Lion{" +
+                "maneVolume=" + maneVolume +
+                ", nickName='" + nickName + '\'' +
+                ", yearBirth=" + yearBirth +
+                ", weight=" + weight +
+                '}';
     }
 
     @Override
