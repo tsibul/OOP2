@@ -87,9 +87,14 @@ public class LionCage implements AnimalCage{
     }
 
     public Lion takeOffAnimal(){
-        Random random = new Random();
-        int i = random.nextInt(lions.size());
-        return (Lion) lions.remove(i);
+        if(lions == null){
+            return null;
+        }
+        else {
+            Random random = new Random();
+            int i = random.nextInt(lions.size());
+            return (Lion) lions.remove(i);
+        }
     }
 
 }

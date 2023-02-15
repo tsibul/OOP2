@@ -7,6 +7,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         L2();
+        LionCage cage = new LionCage();
+        cage.takeOffAnimal();
+        System.out.println(cage.getLions());
+
     }
 
     public static void L2() {
@@ -19,13 +23,15 @@ public class Main {
         cage.giveFood(1200);
         cage.setGarbageWeight(150);
         System.out.println(cage);
-        System.out.println();
+        System.out.println(cage.getLions().size());
 
         cage.cleanCage(50);
         for (Lion lion : lionsCollection) {
             System.out.println(lion.toString());
         }
+        cage.takeOffAnimal();
         System.out.println(cage);
+        System.out.println(cage.getLions().size());
         /*
         Создать package – cage. Работу продолжаем в нем
         Создать интерфейс AnimalCage, который содержит абстрактные методы для:
