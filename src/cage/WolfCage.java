@@ -76,8 +76,13 @@ public class WolfCage implements AnimalCage{
     }
 
     public Wolf takeOffAnimal(){
-        Random random = new Random();
-        int i = random.nextInt(wolves.size());
-        return (Wolf) wolves.remove(i);
+        if(wolves == null){
+            return null;
+        }
+        else {
+            Random random = new Random();
+            int i = random.nextInt(wolves.size());
+            return (Wolf) wolves.remove(i);
+        }
     }
 }
