@@ -9,4 +9,6 @@ public interface AnimalCage {
     void giveFood(int foodWeight);
 
     void cleanCage(int garbageWeight);
+
+    Animal takeOffAnimal();
 }

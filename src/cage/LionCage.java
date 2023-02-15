@@ -1,8 +1,11 @@
 package cage;
 
 import animals.Animal;
+import animals.Lion;
+import animals.Wolf;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class LionCage implements AnimalCage{
     private int foodWeight;
@@ -78,4 +81,11 @@ public class LionCage implements AnimalCage{
             this.garbageWeight = 0;
         }
     }
+
+    public Lion takeOffAnimal(){
+        Random random = new Random();
+        int i = random.nextInt(lions.size());
+        return (Lion) lions.remove(i);
+    }
+
 }
