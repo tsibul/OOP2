@@ -47,16 +47,21 @@ public class WolfCage implements AnimalCage{
     @Override
     public void giveFood(int foodWeight) {
         int tmpFood = foodWeight + this.foodWeight;
-        for (Animal wolf: wolves) {
-            if(tmpFood > wolf.getMAX_WEIGHT()){
-                tmpFood -= wolf.getMAX_WEIGHT();
+        try {
+            for (Animal wolf : wolves) {
+                wolf.feed(tmpFood);
+                if (tmpFood > wolf.getmaxWeight()) {
+                    tmpFood -= wolf.getmaxWeight();
+                } else {
+                    tmpFood = 0;
+                }
             }
-            else {
-                tmpFood = 0;
-            }
-            wolf.feed(tmpFood);
+            this.foodWeight = tmpFood;
         }
-        this.foodWeight = tmpFood;
+        catch (Exception e){
+            this.foodWeight = 0;
+            this.garbageWeight = tmpFood;
+        }
 
     }
 

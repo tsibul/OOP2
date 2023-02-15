@@ -36,7 +36,7 @@ public class Wolf extends Animal{
     }
 
     @Override
-    public int getMAX_WEIGHT() {
+    public int getmaxWeight() {
         return MAX_WEIGHT;
     }
 }

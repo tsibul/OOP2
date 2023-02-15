@@ -2,7 +2,6 @@ package cage;
 
 import animals.Animal;
 import animals.Lion;
-import animals.Wolf;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -60,16 +59,21 @@ public class LionCage implements AnimalCage{
     @Override
     public void giveFood(int foodWeight) {
         int tmpFood = foodWeight + this.foodWeight;
-        for (Animal lion: lions) {
-            if(tmpFood > lion.getMAX_WEIGHT()){
-                tmpFood -= lion.getMAX_WEIGHT();
+        try {
+            for (Animal lion : lions) {
+                lion.feed(tmpFood);
+                if (tmpFood > lion.getmaxWeight()) {
+                    tmpFood -= lion.getmaxWeight();
+                } else {
+                    tmpFood = 0;
+                }
             }
-            else {
-                tmpFood = 0;
-            }
-            lion.feed(tmpFood);
+            this.foodWeight = tmpFood;
         }
-        this.foodWeight = tmpFood;
+        catch (Exception ex){
+            this.foodWeight = 0;
+            this.garbageWeight = tmpFood;
+        }
     }
 
     @Override

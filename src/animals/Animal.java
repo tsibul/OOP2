@@ -16,8 +16,8 @@ public abstract class Animal {
 
     public void feed(int foodWeight) {
         weight = weight + foodWeight;
-        if (weight > getMAX_WEIGHT()) {
-            weight = getMAX_WEIGHT();
+        if (weight > getmaxWeight()) {
+            weight = getmaxWeight();
         }
     }
 
@@ -55,5 +55,5 @@ public abstract class Animal {
 
     public abstract String getType();
 
-    public abstract int getMAX_WEIGHT();
+    public abstract int getmaxWeight();
 }
