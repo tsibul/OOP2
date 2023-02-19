@@ -1,15 +1,18 @@
 package cage;
 
+import Comparators.LionComparatorMane;
 import animals.Animal;
 import animals.Lion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
-public class LionCage implements AnimalCage{
+public class LionCage implements AnimalCage {
     private int foodWeight;
     private int garbageWeight;
-    private ArrayList<Animal> lions;
+    private ArrayList<Lion> lions;
 
     public LionCage() {
         this.lions = lions;
@@ -35,7 +38,7 @@ public class LionCage implements AnimalCage{
         return garbageWeight;
     }
 
-    public ArrayList<Animal> getLions() {
+    public ArrayList<Lion> getLions() {
         return lions;
     }
 
@@ -50,8 +53,8 @@ public class LionCage implements AnimalCage{
 
     @Override
     public int addAnimal(Animal animal) {
-        if(animal.getType().equals("lion")){
-            lions.add(animal);
+        if (animal.getType().equals("lion")) {
+            lions.add((Lion) animal);
         }
         return lions.size();
     }
@@ -69,8 +72,7 @@ public class LionCage implements AnimalCage{
                 }
             }
             this.foodWeight = tmpFood;
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             this.foodWeight = 0;
             this.garbageWeight = tmpFood;
         }
@@ -80,21 +82,27 @@ public class LionCage implements AnimalCage{
     public void cleanCage(int garbageWeight) {
         if (garbageWeight < this.garbageWeight) {
             this.garbageWeight -= garbageWeight;
-        }
-        else {
+        } else {
             this.garbageWeight = 0;
         }
     }
 
-    public Lion takeOffAnimal(){
-        if(lions == null){
+    public Lion takeOffAnimal() {
+        if (lions == null) {
             return null;
-        }
-        else {
+        } else {
             Random random = new Random();
             int i = random.nextInt(lions.size());
             return (Lion) lions.remove(i);
         }
+    }
+
+    public void sortLions() {
+        Collections.sort(lions);
+    }
+
+    public void sortLionsMane (){
+        Collections.sort(lions, new LionComparatorMane());
     }
 
 }

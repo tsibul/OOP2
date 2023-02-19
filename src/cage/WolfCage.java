@@ -1,22 +1,26 @@
 package cage;
 
+import Comparators.WolfAgeComparator;
+import Comparators.WolfHwComparator;
+import Comparators.WolfWeightComparator;
 import animals.Animal;
 import animals.Wolf;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class WolfCage implements AnimalCage{
 
-    private ArrayList<Animal> wolves;
+    private ArrayList<Wolf> wolves;
     private int foodWeight;
     private int garbageWeight;
 
-    public ArrayList<Animal> getWolves() {
+    public ArrayList<Wolf> getWolves() {
         return wolves;
     }
 
-    public void setWolves(ArrayList<Animal> wolves) {
+    public void setWolves(ArrayList<Wolf> wolves) {
         this.wolves = wolves;
     }
 
@@ -39,7 +43,7 @@ public class WolfCage implements AnimalCage{
     @Override
     public int addAnimal(Animal animal) {
         if(animal.getType().equals("wolf")){
-            wolves.add(animal);
+            wolves.add((Wolf) animal);
         }
         return wolves.size();
     }
@@ -84,5 +88,17 @@ public class WolfCage implements AnimalCage{
             int i = random.nextInt(wolves.size());
             return (Wolf) wolves.remove(i);
         }
+    }
+
+    public void wolfWeightSort(){
+        Collections.sort(wolves, new WolfWeightComparator());
+    }
+
+    public void wolfAgeSort(){
+        Collections.sort(wolves, new WolfAgeComparator());
+    }
+
+    public void wolfHwSort(){
+        Collections.sort(wolves, new WolfHwComparator());
     }
 }

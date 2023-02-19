@@ -1,3 +1,4 @@
+import animals.Animal;
 import animals.Lion;
 import cage.LionCage;
 import factory.LionsFactory;
@@ -6,14 +7,15 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        L2();
-        LionCage cage = new LionCage();
-        cage.takeOffAnimal();
-        System.out.println(cage.getLions());
+        LionCage cage = L2();
+        ArrayList<Lion> lions = cage.getLions();
+        cage.sortLionsMane();
+        System.out.println();
+
 
     }
 
-    public static void L2() {
+    public static LionCage L2() {
         ArrayList<Lion> lionsCollection = LionsFactory.createLions(25);
         for (Lion lion : lionsCollection) {
             System.out.println(lion.toString());
@@ -32,19 +34,27 @@ public class Main {
         cage.takeOffAnimal();
         System.out.println(cage);
         System.out.println(cage.getLions().size());
+        return cage;
         /*
         Создать package – cage. Работу продолжаем в нем
         Создать интерфейс AnimalCage, который содержит абстрактные методы для:
         добавления в клетку животного
         передачи корма в клетку
         очистку клетки
-        Создать для сущности Lion отдельный LionCage, реализующий интерфейс AnimalCage. В клетке должна хранится информация о находящихся в ней львах и объем загрязнения клетки.
+        Создать для сущности Lion отдельный LionCage, реализующий интерфейс AnimalCage. В клетке должна хранится
+        информация о находящихся в ней львах и объем загрязнения клетки.
         Создать package – factory. Работу продолжаем в нем
         Создать класс LionsFactory
         Реализовать в нем статический метод для создания коллекции львов с определенным кол-вом в ней:
         ArrayList<Lion> createLions (int lionCount)
-        В методе main создать коллекцию львов и положить её содержимое в клетку. Посмотрите состояние львов, покормите львов в клетке, проверьте изменился ли у них вес.
-
+        В методе main создать коллекцию львов и положить её содержимое в клетку. Посмотрите состояние львов,
+        покормите львов в клетке, проверьте изменился ли у них вес.
+         */
+        /* HW3
+        Создать класс WolfComparator, реализующий сравнение волков по их весу и возрасту.
+        В классе WolfCage добавить метод сортировки волков, используя созданный WolfComparator
+        Имплементировать в классе WolfCage интерфейс Iterable<Wolf> и реализовать логику итерации по волкам в
+        клетке с помощью класса WolfIterator
          */
     }
 

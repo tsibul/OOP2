@@ -39,4 +39,20 @@ public class Wolf extends Animal{
     public int getmaxWeight() {
         return MAX_WEIGHT;
     }
+
+    /*
+    @Override
+    public int compareTo(Wolf o) {
+        if(this.weight - this.yearBirth > o.weight - o.yearBirth){
+            return 1;
+        }
+        else if (this.weight - this.yearBirth < o.weight - o.yearBirth) {
+            return -1;
+        }
+        else {return 0;}
+    }
+    */
+
+
 }
+
