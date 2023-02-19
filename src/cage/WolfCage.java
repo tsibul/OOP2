@@ -1,9 +1,9 @@
 package cage;
 
-import Comparators.WolfAgeComparator;
-import Comparators.WolfHwComparator;
-import Comparators.WolfWeightComparator;
-import Iterators.WolfIterator;
+import comparators.WolfAgeComparator;
+import comparators.WolfHwComparator;
+import comparators.WolfWeightComparator;
+import iterators.WolfIterator;
 import animals.Animal;
 import animals.Wolf;
 

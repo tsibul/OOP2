@@ -1,11 +1,10 @@
 package cage;
 
-import Comparators.LionComparatorMane;
+import comparators.LionComparatorMane;
 import animals.Animal;
 import animals.Lion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
