@@ -8,9 +8,10 @@ import animals.Wolf;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 
-public class WolfCage implements AnimalCage{
+public class WolfCage implements AnimalCage, Iterable<Wolf>{
 
     private ArrayList<Wolf> wolves;
     private int foodWeight;
@@ -100,5 +101,10 @@ public class WolfCage implements AnimalCage{
 
     public void wolfHwSort(){
         Collections.sort(wolves, new WolfHwComparator());
+    }
+
+    @Override
+    public Iterator<Wolf> iterator() {
+        return null;
     }
 }

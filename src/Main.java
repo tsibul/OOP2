@@ -1,4 +1,3 @@
-import animals.Animal;
 import animals.Lion;
 import animals.Wolf;
 import cage.LionCage;
