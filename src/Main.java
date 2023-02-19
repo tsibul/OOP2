@@ -1,16 +1,30 @@
 import animals.Animal;
 import animals.Lion;
+import animals.Wolf;
 import cage.LionCage;
+import cage.WolfCage;
 import factory.LionsFactory;
+import factory.WolfFactory;
 
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         LionCage cage = L2();
         ArrayList<Lion> lions = cage.getLions();
         cage.sortLionsMane();
-        System.out.println();
+         */
+        ArrayList<Wolf> wolves = WolfFactory.createWolves(10);
+        WolfCage cage = new WolfCage();
+        cage.setWolves(wolves);
+        cage.setGarbageWeight(120);
+        cage.setFoodWeight(1200);
+//        System.out.println(cage.getWolves().toString());
+        System.out.println("-------------");
+        cage.wolfHwSort();
+        System.out.println(cage.getWolves().toString());
+
 
 
     }
