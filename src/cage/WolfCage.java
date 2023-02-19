@@ -3,6 +3,7 @@ package cage;
 import Comparators.WolfAgeComparator;
 import Comparators.WolfHwComparator;
 import Comparators.WolfWeightComparator;
+import Iterators.WolfIterator;
 import animals.Animal;
 import animals.Wolf;
 
@@ -105,6 +106,6 @@ public class WolfCage implements AnimalCage, Iterable<Wolf>{
 
     @Override
     public Iterator<Wolf> iterator() {
-        return null;
+        return new WolfIterator(wolves);
     }
 }

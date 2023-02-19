@@ -14,7 +14,7 @@ public class Main {
         ArrayList<Lion> lions = cage.getLions();
         cage.sortLionsMane();
          */
-        ArrayList<Wolf> wolves = WolfFactory.createWolves(10);
+        ArrayList<Wolf> wolves = WolfFactory.createWolves(5);
         WolfCage cage = new WolfCage();
         cage.setWolves(wolves);
         cage.setGarbageWeight(120);
@@ -22,8 +22,10 @@ public class Main {
 //        System.out.println(cage.getWolves().toString());
         System.out.println("-------------");
         cage.wolfHwSort();
-        System.out.println(cage.getWolves().toString());
-
+//        System.out.println(cage.getWolves().toString());
+        for(Wolf wolf: cage){
+            System.out.println(wolf);
+        }
 
 
     }
