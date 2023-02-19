@@ -3,3 +3,7 @@
 /.class/
 /out/production/OOP2/animals/Wolf.class
 /out/production/OOP2/cage/WolfCage.class
+/out/production/OOP2/animals/Animal.class
+/out/production/OOP2/cage/AnimalCage.class
+/out/production/OOP2/animals/*.class
+/out/production/OOP2/cage/*.class
