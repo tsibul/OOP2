@@ -8,12 +8,12 @@ import cage.AnimalCage;
 public class Zoo {
     private AnimalCage<Wolf> wolfCage;
     private AnimalCage<Lion> lionCage;
-    private AnimalCage<Snake> snakeTerrarium;
+    private AnimalCage<Snake> snakeCage;
 
     public Zoo(AnimalCage<Wolf> wolfCage, AnimalCage<Lion> lionCage, AnimalCage<Snake> snakeTerrarium) {
         this.wolfCage = wolfCage;
         this.lionCage = lionCage;
-        this.snakeTerrarium = snakeTerrarium;
+        this.snakeCage = snakeTerrarium;
     }
 
 
@@ -34,11 +34,11 @@ public class Zoo {
     }
 
     public AnimalCage<Snake> getSnakeTerrarium() {
-        return snakeTerrarium;
+        return snakeCage;
     }
 
     public void setSnakeTerrarium(AnimalCage<Snake> snakeTerrarium) {
-        this.snakeTerrarium = snakeTerrarium;
+        this.snakeCage = snakeTerrarium;
     }
 
 }
