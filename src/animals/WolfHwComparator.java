@@ -1,4 +1,4 @@
-package comparators;
+package animals;
 
 import animals.Wolf;
 

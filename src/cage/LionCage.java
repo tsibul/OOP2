@@ -1,14 +1,14 @@
 package cage;
 
-import comparators.LionComparatorMane;
 import animals.Animal;
 import animals.Lion;
+import animals.LionComparatorMane;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class LionCage implements AnimalCage {
+public class LionCage implements AnimalCage<Lion> {
     private int foodWeight;
     private int garbageWeight;
     private ArrayList<Lion> lions;
@@ -51,12 +51,14 @@ public class LionCage implements AnimalCage {
     }
 
     @Override
-    public int addAnimal(Animal animal) {
+    public int addAnimal(Lion animal) {
         if (animal.getType().equals("lion")) {
-            lions.add((Lion) animal);
+            lions.add(animal);
         }
         return lions.size();
     }
+
+
 
     @Override
     public void giveFood(int foodWeight) {

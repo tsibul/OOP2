@@ -1,6 +1,4 @@
-package iterators;
-
-import animals.Wolf;
+package animals;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,7 +8,7 @@ public class WolfIterator implements Iterator {
     private ArrayList<Wolf> wolves;
     private int cursor;
 
-    public WolfIterator(ArrayList<Wolf> wolves){
+    public WolfIterator(ArrayList<Wolf> wolves) {
         this.wolves = wolves;
     }
 

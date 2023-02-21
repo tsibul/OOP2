@@ -1,6 +1,4 @@
-package comparators;
-
-import animals.Lion;
+package animals;
 
 import java.util.Comparator;
 
@@ -10,8 +8,7 @@ public class LionComparatorMane implements Comparator<Lion> {
     public int compare(Lion o1, Lion o2) {
         if (o1.getManeVolume() < o2.getManeVolume()) {
             return -1;
-        }
-        else if(o1.getManeVolume() > o2.getManeVolume()){
+        } else if (o1.getManeVolume() > o2.getManeVolume()) {
             return 1;
         }
         return 0;

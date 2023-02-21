@@ -1,14 +1,25 @@
 package cage;
 
 import animals.Animal;
+import animalUtils.AnimalAgeComparator;
 
-public interface AnimalCage {
+import java.util.ArrayList;
+import java.util.Collections;
 
-    int addAnimal(Animal animal);
+public interface AnimalCage<T extends Animal> {
+
+    int addAnimal(T t);
 
     void giveFood(int foodWeight);
 
     void cleanCage(int garbageWeight);
 
     Animal takeOffAnimal();
+
+    default void sortByAge (ArrayList<T> animalList){
+        Collections.sort(animalList,new AnimalAgeComparator());
+    }
+
+
+
 }

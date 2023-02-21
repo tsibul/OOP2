@@ -49,4 +49,6 @@ public class Lion extends Animal implements Comparable<Lion> {
             return 0;
         }
     }
+
+
 }
