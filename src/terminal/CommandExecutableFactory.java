@@ -1,17 +1,12 @@
 package terminal;
 
-import animals.Animal;
 import animals.Lion;
 import animals.Snake;
 import animals.Wolf;
 import zoo.Zoo;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class CommandExecutableFactory {
     private Zoo zoo;
-    private Animal animal;
 
     public CommandExecutableFactory(Zoo zoo) {
         this.zoo = zoo;
@@ -19,10 +14,6 @@ public class CommandExecutableFactory {
 
     public void setZoo(Zoo zoo) {
         this.zoo = zoo;
-    }
-
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
     }
 
     public CommandExecutable create(String[] input) {
