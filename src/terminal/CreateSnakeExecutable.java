@@ -1,6 +1,5 @@
 package terminal;
 
-import animals.Lion;
 import animals.Snake;
 import zoo.Zoo;
 

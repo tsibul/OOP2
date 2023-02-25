@@ -1,9 +1,5 @@
 package terminal;
 
-import animals.Lion;
-import animals.Snake;
-import animals.Wolf;
-import cage.AnimalCage;
 import zoo.Zoo;
 
 public class DeleteLionExecutable implements CommandExecutable{
