@@ -57,7 +57,7 @@ public class SnakeCage implements AnimalCage<Snake> {
     }
 
     @Override
-    public Animal takeOffAnimal() {
+    public Snake takeOffAnimal() {
         return null;
     }
 

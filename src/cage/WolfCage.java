@@ -18,6 +18,16 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
     private int foodWeight;
     private int garbageWeight;
 
+    public WolfCage(ArrayList<Wolf> wolves, int foodWeight, int garbageWeight) {
+        this.wolves = wolves;
+        this.foodWeight = foodWeight;
+        this.garbageWeight = garbageWeight;
+    }
+
+    public WolfCage() {
+        this.wolves = new ArrayList<Wolf>();
+    }
+
     public ArrayList<Wolf> getWolves() {
         return wolves;
     }
@@ -82,7 +92,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
     }
 
     public Wolf takeOffAnimal(){
-        if(wolves == null){
+        if(this.wolves.isEmpty()){
             return null;
         }
         else {

@@ -4,6 +4,8 @@ import cage.LionCage;
 import cage.WolfCage;
 import factory.LionsFactory;
 import factory.WolfFactory;
+import terminal.TerminalReader;
+import zoo.Zoo;
 
 import java.util.ArrayList;
 
@@ -19,16 +21,24 @@ public class Main {
         cage.setWolves(wolves);
         cage.setGarbageWeight(120);
         cage.setFoodWeight(1200);
+        ArrayList<Lion> lionsCollection = LionsFactory.createLions(25);
+        LionCage cagel = new LionCage();
+        cagel.setLions(lionsCollection);
+//          System.out.println(cage.getWolves().toString());
+//        System.out.println("-------------");
+//        cage.wolfHwSort();
 //        System.out.println(cage.getWolves().toString());
-        System.out.println("-------------");
-        cage.wolfHwSort();
-//        System.out.println(cage.getWolves().toString());
-        for(Wolf wolf: cage){
-            System.out.println(wolf);
+//        for(Wolf wolf: cage){
+//            System.out.println(wolf);
+        TerminalReader term = new TerminalReader();
+        Zoo zoo = new Zoo(cage, cagel, null);
+        term.endless(zoo);
+        System.out.println();
         }
 
 
-    }
+
+
 
     public static LionCage L2() {
         ArrayList<Lion> lionsCollection = LionsFactory.createLions(25);

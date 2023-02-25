@@ -16,6 +16,29 @@ public class Zoo {
         this.snakeCage = snakeTerrarium;
     }
 
+    public Lion takeOfLion(){
+        return this.lionCage.takeOffAnimal();
+    }
+
+    public Wolf takeOfWolf(){
+        return this.wolfCage.takeOffAnimal();
+    }
+
+    public Snake takeOfSnake(){
+        return this.snakeCage.takeOffAnimal();
+    }
+
+    public int addLion(Lion animal){
+        return this.lionCage.addAnimal(animal);
+    }
+
+    public int addSnake(Snake animal){
+        return this.snakeCage.addAnimal(animal);
+    }
+
+    public int addWolf(Wolf animal){
+        return this.wolfCage.addAnimal(animal);
+    }
 
     public AnimalCage<Wolf> getWolfCage() {
         return wolfCage;
