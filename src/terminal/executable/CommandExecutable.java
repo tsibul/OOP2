@@ -1,4 +1,4 @@
-package terminal;
+package terminal.executable;
 
 public interface CommandExecutable {
 
