@@ -21,6 +21,6 @@ public interface CommandParser {
         return new Command(action, animal, param);
     }
 
-    
+
 
 }
