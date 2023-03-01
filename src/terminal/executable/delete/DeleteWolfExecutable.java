@@ -1,8 +1,9 @@
-package terminal;
+package terminal.executable.delete;
 
+import terminal.executable.CommandExecutable;
 import zoo.Zoo;
 
-public class DeleteWolfExecutable implements CommandExecutable{
+public class DeleteWolfExecutable implements CommandExecutable {
 
     private Zoo zoo;
 

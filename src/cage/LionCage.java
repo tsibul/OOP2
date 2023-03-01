@@ -2,7 +2,7 @@ package cage;
 
 import animals.Animal;
 import animals.Lion;
-import animals.LionComparatorMane;
+import animals.comparator.LionComparatorMane;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -48,7 +48,6 @@ public class SnakeCage implements AnimalCage<Snake> {
 
     @Override
     public void giveFood(int foodWeight) {
-
     }
 
     @Override
