@@ -5,6 +5,7 @@ import cage.WolfCage;
 import factory.LionsFactory;
 import factory.WolfFactory;
 import terminal.TerminalReader;
+import terminal.parser.ZooCommandParser;
 import zoo.Zoo;
 
 import java.util.ArrayList;
@@ -30,9 +31,10 @@ public class Main {
 //        System.out.println(cage.getWolves().toString());
 //        for(Wolf wolf: cage){
 //            System.out.println(wolf);
-        TerminalReader term = new TerminalReader();
         Zoo zoo = new Zoo(cage, cagel, null);
-        term.endless(zoo);
+        TerminalReader term = TerminalReader.newTerminalReader(new ZooCommandParser());
+        term.setZoo(zoo);
+        term.endless();
         System.out.println();
         }
 
