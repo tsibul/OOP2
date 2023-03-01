@@ -1,16 +1,28 @@
 package terminal;
 
-import animals.Animal;
+import terminal.checks.InputCheck;
+import terminal.executable.CommandExecutable;
+import terminal.executable.factory.CommandExecutableFactoryImpl;
+import terminal.message.ErrorMessage;
+import terminal.message.InviteMessage;
+import terminal.parser.CommandParser;
 import zoo.Zoo;
 
 import java.util.Scanner;
 
 public class TerminalReader {
     private static TerminalReader terminalReader;
+    private Zoo zoo;
 
-//    private CommandParser commandParser;
+    public void setZoo(Zoo zoo) {
+        this.zoo = zoo;
+    }
 
-/*    private TerminalReader(CommandParser commandParser) {
+    private CommandParser commandParser;
+
+    private CommandExecutable commandExecutable;
+
+    private TerminalReader(CommandParser commandParser) {
         this.commandParser = commandParser;
     }
 
@@ -21,38 +33,26 @@ public class TerminalReader {
         return terminalReader;
     }
 
+    public void setCommandExecutable(Command command) {
+        this.commandExecutable = new CommandExecutableFactoryImpl(zoo).create(command);
+    }
 
- */
-    public void endless(Zoo zoo) {
+    public void endless() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("input what you want\n " +
-                    "Format: <type of animal> delete or\n " +
-                    "<type of animal> create name year_of_birth weight extra_number" +
-                    "(maneVolume, height, bodyLength etc.)");
+            new InviteMessage().consoleMessage();
             String input = scanner.nextLine();
             if (input.equals("stop")) break;
-            String[] inputList = input.split(" ");
-            if(inputCheck(inputList)){
-                CommandExecutableFactory oper = new CommandExecutableFactory(zoo);
-                oper.create(inputList).execute();
-            }
-            else {
-                System.out.println("Wrong input try again\n");
+            if (new InputCheck(input).isCheck()) {
+                Command newCommand = this.commandParser.parseCommand(input);
+                this.setCommandExecutable(newCommand);
+                this.commandExecutable.execute();
+            } else {
+                new ErrorMessage().consoleMessage();
             }
         }
         scanner.close();
     }
 
-    boolean inputCheck(String[] inputList) {
-        if (inputList.length != 2 && inputList.length != 6) return false;
-        else if (inputList[0].equals("wolf") && inputList[0].equals("lion") && inputList[0].equals("snake")) return false;
-            // можно создать set со зверями и проверять на присутствие в сете,
-            // но это будет актуально, если сделать автоматическое создание класса
-        else if (inputList[1].equals("delete") && inputList[1].equals("create")) return false;
-        else if (inputList.length == 6 && (!inputList[3].matches("\\d+") ||
-                !inputList[4].matches("\\d+") ||
-                !inputList[5].matches("\\d+"))) return false;
-        return true;
-    }
+
 }
