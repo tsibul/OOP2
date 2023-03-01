@@ -1,4 +1,6 @@
-package animals;
+package animals.iterator;
+
+import animals.Wolf;
 
 import java.util.ArrayList;
 import java.util.Iterator;

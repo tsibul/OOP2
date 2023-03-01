@@ -1,4 +1,6 @@
-package animals;
+package animals.comparator;
+
+import animals.Lion;
 
 import java.util.Comparator;
 
