@@ -66,10 +66,22 @@ public class Zoo {
 
     @Override
     public String toString() {
+        int wolfCount = 0;
+        int snakeCount = 0;
+        int lionCount = 0;
+        if(wolfCage != null){
+            wolfCount = wolfCage.countAnimals();
+        }
+        if(snakeCage != null){
+            snakeCount = snakeCage.countAnimals();
+        }
+        if(lionCage != null){
+            lionCount = lionCage.countAnimals();
+        }
         return "Zoo{" +
-                "wolves=" + wolfCage.countAnimals() +
-                ", lions=" + lionCage.countAnimals() +
-                ", snakes=" + snakeCage.countAnimals() +
+                "wolves=" + wolfCount +
+                ", lions=" + lionCount +
+                ", snakes=" + snakeCount +
                 '}';
     }
 }
