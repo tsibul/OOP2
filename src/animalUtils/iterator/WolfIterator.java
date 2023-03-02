@@ -1,4 +1,4 @@
-package animals.iterator;
+package animalUtils.iterator;
 
 import animals.Wolf;
 

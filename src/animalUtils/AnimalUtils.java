@@ -1,5 +1,6 @@
 package animalUtils;
 
+import animalUtils.comparator.AnimalAgeComparator;
 import animals.Animal;
 
 import java.util.ArrayList;

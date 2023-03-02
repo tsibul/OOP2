@@ -1,4 +1,4 @@
-package animals.comparator;
+package animalUtils.comparator;
 
 import animals.Wolf;
 

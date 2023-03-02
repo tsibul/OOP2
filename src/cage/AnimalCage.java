@@ -1,7 +1,7 @@
 package cage;
 
 import animals.Animal;
-import animalUtils.AnimalAgeComparator;
+import animalUtils.comparator.AnimalAgeComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
