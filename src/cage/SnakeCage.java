@@ -62,7 +62,7 @@ public class SnakeCage implements AnimalCage<Snake> {
 
     @Override
     public int countAnimals() {
-        return snakes.size();
+            return snakes.size();
     }
 
     @Override
