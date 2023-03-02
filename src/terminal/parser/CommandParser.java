@@ -8,7 +8,7 @@ public interface CommandParser {
 
     default Command parseCommand(String inputCommand) {
         ArrayList<String> param = new ArrayList<>();
-        String[] paramTmp = inputCommand.split(" ");
+        String[] paramTmp = inputCommand.split("\\s+");
         String action = paramTmp[0];
         String animal = paramTmp[1];
         if (paramTmp.length == 6) {

@@ -5,16 +5,11 @@ public class InputCheck {
     private String input;
     private boolean check;
 
-    public boolean isCheck() {
-        return check;
-    }
-
     public InputCheck(String input) {
         this.input = input;
-        this.check = inputCheck();
     }
 
-    public boolean inputCheck() {
+    public boolean isCheck() {
         String[] inputList = input.split(" ");
         if (inputList.length != 2 && inputList.length != 6) {
             check = false;
