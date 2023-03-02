@@ -1,5 +1,7 @@
 package terminal;
 
+import terminal.executable.CommandTypes;
+
 import java.util.ArrayList;
 
 public class Command {
@@ -23,7 +25,15 @@ public class Command {
         this.action = action;
         this.animal = animal;
         this.parameters = parameters;
+    }
 
-
+    public CommandTypes getCommandEnum(){
+        for (CommandTypes x: CommandTypes.values())
+              {
+            if(x.getTitle().equals(this.action+this.animal)){
+                return (CommandTypes) x;
+            }
+        }
+        return null;
     }
 }

@@ -20,6 +20,16 @@ public class CreateSnakeExecutable implements CommandExecutable {
                 Integer.parseInt(input.get(3)));
     }
 
+    public CreateSnakeExecutable() {
+
+    }
+
+
+    public CreateSnakeExecutable getZoo(Zoo zoo, Command command) {
+        return new CreateSnakeExecutable(zoo, command);
+    }
+
+
     @Override
     public void execute() {
         this.zoo.addSnake(snake);

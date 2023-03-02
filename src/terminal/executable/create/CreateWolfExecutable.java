@@ -20,6 +20,16 @@ public class CreateWolfExecutable implements CommandExecutable {
                 Integer.parseInt(input.get(3)));
     }
 
+    public CreateWolfExecutable() {
+
+    }
+
+
+    public CreateWolfExecutable getZoo(Zoo zoo, Command command) {
+        return new CreateWolfExecutable(zoo, command);
+    }
+
+
     @Override
     public void execute() {
         this.zoo.addWolf(wolf);
