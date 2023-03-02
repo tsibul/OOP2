@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
+public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf> {
 
     private ArrayList<Wolf> wolves;
     private int foodWeight;
@@ -54,7 +54,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     @Override
     public int addAnimal(Wolf animal) {
-        if(animal.getType().equals("wolf")){
+        if (animal.getType().equals("wolf")) {
             wolves.add(animal);
         }
         return wolves.size();
@@ -73,8 +73,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
                 }
             }
             this.foodWeight = tmpFood;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             this.foodWeight = 0;
             this.garbageWeight = tmpFood;
         }
@@ -85,17 +84,15 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
     public void cleanCage(int garbageWeight) {
         if (garbageWeight < this.garbageWeight) {
             this.garbageWeight -= garbageWeight;
-        }
-        else {
+        } else {
             this.garbageWeight = 0;
         }
     }
 
-    public Wolf takeOffAnimal(){
-        if(this.wolves.isEmpty()){
+    public Wolf takeOffAnimal() {
+        if (this.wolves.isEmpty()) {
             return null;
-        }
-        else {
+        } else {
             Random random = new Random();
             int i = random.nextInt(wolves.size());
             return (Wolf) wolves.remove(i);
@@ -107,15 +104,15 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
         return wolves.size();
     }
 
-    public void wolfWeightSort(){
+    public void wolfWeightSort() {
         Collections.sort(wolves, new WolfWeightComparator());
     }
 
-    public void wolfAgeSort(){
+    public void wolfAgeSort() {
         Collections.sort(wolves, new WolfAgeComparator());
     }
 
-    public void wolfHwSort(){
+    public void wolfHwSort() {
         Collections.sort(wolves, new WolfHwComparator());
     }
 
