@@ -10,7 +10,7 @@ public class InputCheck {
     }
 
     public boolean isCheck() {
-        String[] inputList = input.split(" ");
+        String[] inputList = input.split("\\s");
         if (inputList.length != 2 && inputList.length != 6) {
             check = false;
         } else if (!inputList[0].equals("wolf") && !inputList[0].equals("lion") && !inputList[0].equals("snake")){
