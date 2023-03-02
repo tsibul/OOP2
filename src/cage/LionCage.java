@@ -98,6 +98,11 @@ public class LionCage implements AnimalCage<Lion> {
         }
     }
 
+    @Override
+    public int countAnimals() {
+        return lions.size();
+    }
+
     public void sortLions() {
         Collections.sort(lions);
     }

@@ -64,6 +64,14 @@ public class Zoo {
         this.snakeCage = snakeTerrarium;
     }
 
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "wolves=" + wolfCage.countAnimals() +
+                ", lions=" + lionCage.countAnimals() +
+                ", snakes=" + snakeCage.countAnimals() +
+                '}';
+    }
 }
 
 

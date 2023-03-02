@@ -102,6 +102,11 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
         }
     }
 
+    @Override
+    public int countAnimals() {
+        return wolves.size();
+    }
+
     public void wolfWeightSort(){
         Collections.sort(wolves, new WolfWeightComparator());
     }

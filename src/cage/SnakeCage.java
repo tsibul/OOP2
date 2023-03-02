@@ -61,6 +61,11 @@ public class SnakeCage implements AnimalCage<Snake> {
     }
 
     @Override
+    public int countAnimals() {
+        return snakes.size();
+    }
+
+    @Override
     public void sortByAge(ArrayList<Snake> animalList) {
         AnimalCage.super.sortByAge(animalList);
     }

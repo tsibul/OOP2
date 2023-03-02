@@ -40,6 +40,7 @@ public class TerminalReader {
     public void endless() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            System.out.println(zoo.toString() + "\n");
             new InviteMessage().consoleMessage();
             String input = scanner.nextLine();
             if (input.equals("stop")) break;
