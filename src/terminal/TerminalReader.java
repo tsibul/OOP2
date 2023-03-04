@@ -10,6 +10,8 @@ import zoo.Zoo;
 
 import java.util.Scanner;
 
+import static terminal.checks.InputCheck.isCheck;
+
 public class TerminalReader {
     private static TerminalReader terminalReader;
     private Zoo zoo;
@@ -33,7 +35,7 @@ public class TerminalReader {
         return terminalReader;
     }
 
-    public void setCommandExecutable(Command command) {
+    private void setCommandExecutable(Command command) {
         this.commandExecutable = new CommandExecutableFactoryImpl(zoo).create(command);
     }
 
@@ -44,7 +46,7 @@ public class TerminalReader {
             new InviteMessage().consoleMessage();
             String input = scanner.nextLine();
             if (input.equals("stop")) break;
-            if (new InputCheck(input).isCheck()) {
+            if (isCheck(input)) {
                 Command newCommand = this.commandParser.parseCommand(input);
                 this.setCommandExecutable(newCommand);
                 this.commandExecutable.execute();

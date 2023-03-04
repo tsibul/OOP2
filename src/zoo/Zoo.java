@@ -16,28 +16,53 @@ public class Zoo {
         this.snakeCage = snakeTerrarium;
     }
 
-    public Lion takeOfLion(){
-        return this.lionCage.takeOffAnimal();
+    public Lion takeOfLion() {
+        if (this.lionCage == null) {
+            return null;
+        } else {
+            return this.lionCage.takeOffAnimal();
+        }
     }
 
-    public Wolf takeOfWolf(){
-        return this.wolfCage.takeOffAnimal();
+    public Wolf takeOfWolf() {
+        if (this.wolfCage == null) {
+            return null;
+        } else {
+
+            return this.wolfCage.takeOffAnimal();
+        }
     }
 
-    public Snake takeOfSnake(){
-        return this.snakeCage.takeOffAnimal();
+    public Snake takeOfSnake() {
+        if (this.snakeCage == null) {
+            return null;
+        } else {
+            return this.snakeCage.takeOffAnimal();
+        }
     }
 
-    public int addLion(Lion animal){
-        return this.lionCage.addAnimal(animal);
+    public int addLion(Lion animal) {
+        if (this.lionCage == null) {
+            return 0;
+        } else {
+            return this.lionCage.addAnimal(animal);
+        }
     }
 
-    public int addSnake(Snake animal){
-        return this.snakeCage.addAnimal(animal);
+    public int addSnake(Snake animal) {
+        if (this.snakeCage == null) {
+            return 0;
+        } else {
+            return this.snakeCage.addAnimal(animal);
+        }
     }
 
-    public int addWolf(Wolf animal){
-        return this.wolfCage.addAnimal(animal);
+    public int addWolf(Wolf animal) {
+        if (this.wolfCage == null) {
+            return 0;
+        } else {
+            return this.wolfCage.addAnimal(animal);
+        }
     }
 
     public AnimalCage<Wolf> getWolfCage() {
@@ -69,13 +94,13 @@ public class Zoo {
         int wolfCount = 0;
         int snakeCount = 0;
         int lionCount = 0;
-        if(wolfCage != null){
+        if (wolfCage != null) {
             wolfCount = wolfCage.countAnimals();
         }
-        if(snakeCage != null){
+        if (snakeCage != null) {
             snakeCount = snakeCage.countAnimals();
         }
-        if(lionCage != null){
+        if (lionCage != null) {
             lionCount = lionCage.countAnimals();
         }
         return "Zoo{" +

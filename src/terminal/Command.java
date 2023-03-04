@@ -21,19 +21,20 @@ public class Command {
         return parameters;
     }
 
-    public Command(String action, String animal, ArrayList<String> parameters) {
-        this.action = action;
+    public Command(String animal, String action, ArrayList<String> parameters) {
         this.animal = animal;
+        this.action = action;
         this.parameters = parameters;
     }
 
     public CommandTypes getCommandEnum(){
         for (CommandTypes x: CommandTypes.values())
               {
-            if(x.getTitle().equals(this.action+this.animal)){
+            if(x.checkType(this.animal, this.action)){
                 return (CommandTypes) x;
             }
         }
         return null;
     }
+
 }

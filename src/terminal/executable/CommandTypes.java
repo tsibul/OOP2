@@ -40,4 +40,8 @@ public enum CommandTypes {
     public CommandExecutable getMethod() {
         return method;
     }
+
+    public boolean checkType(String animal, String action){
+        return title.equals(animal + action);
+    }
 }
